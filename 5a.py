@@ -1,3 +1,7 @@
+"""a) Usage of Sigmoid activation function in artificial neural network 
+"""
+
+
 import numpy as np
 from functools import reduce
 
@@ -78,3 +82,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+"""Conclusion: Sigmoid or logistic function used to display the working of AND and NAND  logic functions."""

@@ -1,3 +1,13 @@
+"""Using Keras and tensor flow network 
+i) Load the mnist image dataset 
+ii) Design a two-layer neural network with one hidden layer and one output layer a. Use CNN with Leaky Relu activation function for the hidden layer b. Use sigmoid activation function for the output layer 
+iii)Train the designed network for mnist dataset 
+iv)Visualize the results of 
+a) Training vs validation accuracy 
+b) Training vs Validation loss 
+"""
+
+
 # Importing required libraries
 import numpy as np
 from keras.datasets import mnist
@@ -188,3 +198,6 @@ plt.show()
 # Classification report
 target_names = ["Class {}".format(i) for i in range(num_classes)]
 print(classification_report(test_Y, predicted_classes, target_names=target_names))
+
+
+"""Conclusion: Using Keras and tensor flow network loaded the mnist image dataset and designed a two-layer neural network with one hidden layer and one output layer using  CNN with Leaky Relu activation function for the hidden layer."""

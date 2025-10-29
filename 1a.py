@@ -1,3 +1,10 @@
+
+"""Apply: 
+Simple linear regression model for head Brain dataset and predict brain weight based  on head size using the least square method. 
+Find out 
+ i. R2score for the predicted model. 
+ii. Display all the data points along with the fitting the data points to the 
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

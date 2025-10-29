@@ -1,3 +1,14 @@
+"""Using Keras and Tensor flow framework 
+i) Load the Pima_indians_diabetes dataset 
+ii) Design a two-layer neural network with one hidden layer and one output layer a. Use Relu activation function for the hidden layer 
+b. Use sigmoid activation function for the output layer 
+iii) Train the designed network for Pima_indians_diabetes 
+iv)Evaluate the network 
+v) Generate Predictions for 10 samples 
+"""
+
+
+
 # First Neural Network with Keras
 
 from numpy import loadtxt
@@ -107,3 +118,7 @@ plt.xlabel("Epoch")
 plt.ylabel("Accuracy Score")
 plt.title("Training vs Testing Accuracy")
 plt.show()
+
+
+
+"""Conclusion :Using Keras and Tensor flow framework loaded the Pima_indians_diabetes  dataset and designed a two-layer neural network with one hidden layer and one output  layer and generated predictions for 10 samples. """

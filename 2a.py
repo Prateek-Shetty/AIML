@@ -1,3 +1,6 @@
+"""Apply: 
+a)Multiple linear regression model for student dataset and predict writing skill of  student based on the math skill and reading skill of the student using the Gradient  descent method. Find out R2score for the predicted model. """
+
 # Step 1: Import Libraries
 import numpy as np
 import pandas as pd

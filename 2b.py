@@ -1,3 +1,7 @@
+"""Multiple linear regression model for housing_prices dataset and predict house price  based on the area, floor and room size of the house using the library scikit learn. Find out  the accuracy of the model using R2score statistics for the predicted model. 
+"""
+
+
 # Step 1: Import Libraries
 import numpy as np
 import pandas as pd

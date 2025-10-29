@@ -1,3 +1,6 @@
+"""Identification of face using opencv library """
+
+
 import numpy as np
 import cv2
 
@@ -28,3 +31,5 @@ cv2.imshow('Detected Faces', img)
 # Wait for a key press to close the window
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+"""Using open cv library of Neural Networks, faces are detected."""

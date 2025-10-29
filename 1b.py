@@ -1,3 +1,9 @@
+"""Simple linear regression model for housing_ prices_ SLR dataset and predict house  price based on the area of the house using the library scikit_ learn. Find out 
+i. Analyze the R2score of predicted training and test models score. 
+ii. Display all the data points along with the fitting the data points to the model. 
+"""
+
+
 # Step 1: Import Libraries
 import numpy as np
 import pandas as pd

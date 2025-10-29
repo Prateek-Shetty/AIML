@@ -1,3 +1,6 @@
+"""Hierarchical Clustering Algorithm on seeds_less_rows dataset for extracting cluster  labels of different varieties of seeds """
+
+
 # Step 1 & 2: Importing libraries and loading the dataset
 import pandas as pd
 
@@ -40,3 +43,6 @@ ct = pd.crosstab(df['labels'], df['varieties'])
 # Step 8: Display the cross-tabulation
 print("\nCross-tabulation of Cluster Labels vs Grain Varieties:")
 print(ct)
+
+
+"""Conclusion: Three varieties of labels extracted from 'seeds-less-rows’ dataset by applying  Hierarchical clustering technique as shown in the output table."""

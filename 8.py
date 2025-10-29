@@ -1,3 +1,13 @@
+"""Using Keras and tensor flow network 
+i) Load the imdb text dataset 
+ ii) Design a two-layer neural network with one hidden layer and one output layer a. Use simple RNN in the hidden layer 
+b. Use sigmoid activation function for the output layer 
+iii) Train the designed network for imdb dataset 
+iv) Visualize the results of 
+a) Training vs validation accuracy 
+b) Training vs Validation loss 
+"""
+
 # Import required libraries
 from keras.models import Sequential
 from keras.layers import Embedding, SimpleRNN, Dense
@@ -110,3 +120,6 @@ plt.plot(epochs, val_loss, 'b', label='Validation loss')
 plt.title('Training and Validation Loss')
 plt.legend()
 plt.show()
+
+
+""" Using Keras and tensor flow network loaded the imdb text dataset and  designed a two-layer neural network with one hidden layer and one output layer using  simple RNN in the hidden layer."""

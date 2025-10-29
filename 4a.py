@@ -1,3 +1,6 @@
+"""a)Partitioning k-means clustering technique on ch1ex1 dataset with different K  (number of clusters) as input and record the output. 
+"""
+
 # Importing required library
 import pandas as pd
 
@@ -40,3 +43,6 @@ plt.title("K-Means Clustering with Centroids")
 plt.xlabel("Feature 1")
 plt.ylabel("Feature 2")
 plt.show()
+
+
+"""Conclusion: The k-means clustering technique is applied to ch1ex1 dataset to form  clusters depending on the number of clusters as input. Then the centroid of the clustering  is shown using the cross mark"""

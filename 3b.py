@@ -1,3 +1,10 @@
+"""Apply Naïve Bayesian classifier on breast cancer dataset. 
+Find out 
+i) No of benign and malignant cases in the testing phase. 
+ii) Predict the accuracy of the classifier 
+"""
+
+
 # Step 1: Import Libraries
 import numpy as np
 import pandas as pd
@@ -63,3 +70,7 @@ print(confusion_matrix(y_train == 'M', train_pred_threshold))
 
 print("\nConfusion Matrix (Test, Threshold=0.25):")
 print(confusion_matrix(y_test == 'M', test_pred_threshold))
+
+
+
+"""Conclusion: The naïve bayes model is good with respect to breast cancer dataset by  comparing the precision recall and F1 score values of training and testing dataset  (classification report)"""

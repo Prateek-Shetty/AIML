@@ -1,3 +1,11 @@
+"""Apply: 
+a) Decision tree on breast cancer dataset. 
+Find out 
+ i) No of benign and malignant cases in the testing phase. 
+ii) Predict the accuracy of the both classifier. 
+"""
+
+
 # Step 1: Import Libraries
 import numpy as np
 import pandas as pd
@@ -47,3 +55,6 @@ print("\nTraining Confusion Matrix:\n", confusion_matrix(y_train, dt_classifier.
 print("\nTesting Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
+
+
+"""Comparing Training and testing accuracy scores the accuracy of Decision Tree model is  good. The Correctly classified tuples for training set is (286+169) and the misclassified  tuples are zero.The correctly classified for training set is (71+36)and misclassified tuples  are(7+0)."""
