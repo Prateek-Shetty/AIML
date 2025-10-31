@@ -69,8 +69,8 @@ plt.show()
 # STEP 6: Compute R² Score
 # ==========================
 y_pred = b0 + b1 * X
-ss_tot = np.sum((Y - mean_y) ** 2)
 ss_res = np.sum((Y - y_pred) ** 2)
+ss_tot = np.sum((Y - mean_y) ** 2)
 r2 = 1 - (ss_res / ss_tot)
 
 print("\nModel Evaluation:")

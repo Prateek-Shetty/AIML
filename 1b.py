@@ -25,16 +25,13 @@ print("\nSample X values:", X[:5].flatten())
 print("Sample y values:", y[:5])
 
 # Step 4: Split the Data (80-20)
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=100
-)
+X_train, X_test, y_train, y_test = train_test_split(  X, y, test_size=0.2, random_state=100)
 print("\nTraining set shape:", X_train.shape)
 print("Testing set shape:", X_test.shape)
 
 # Step 5: Train the Simple Linear Regression Model
 lr_model = LinearRegression()
 lr_model.fit(X_train, y_train)
-
 print("\nModel Parameters (with intercept):")
 print(f"Intercept (b0): {lr_model.intercept_}")
 print(f"Slope (b1): {lr_model.coef_[0]}")
