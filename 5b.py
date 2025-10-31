@@ -1,6 +1,5 @@
 """Identification of face using opencv library """
 
-
 import numpy as np
 import cv2
 
