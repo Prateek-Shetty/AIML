@@ -24,9 +24,7 @@ print(y[:5])
 
 # Step 4: Split Data (80% Train, 20% Test)
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=100
-)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=100)
 print("\nTraining set shape:", X_train.shape)
 print("Testing set shape:", X_test.shape)
 
