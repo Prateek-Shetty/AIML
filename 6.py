@@ -14,13 +14,16 @@ v) Generate Predictions for 10 samples
 from numpy import loadtxt
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn import preprocessing
 from keras import models
 from keras.models import Sequential
 from keras.layers import Dense
 from keras import layers
-from sklearn.model_selection import train_test_split
-from sklearn import preprocessing
-import matplotlib.pyplot as plt
+
+
+
 
 # ==========================
 # Step 1: Load the dataset
