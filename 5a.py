@@ -62,13 +62,14 @@ def main():
     # logic_xor = compute('logic_xor', logic, dataset)
 
     # Function to print results in a formatted truth table
-def template(dataset, name, data):
-    print(f"\nLogic Function: {name[6:].upper()}")
-    print("X0\tX1\tX2\tY")
+    def template(dataset, name, data):
+     print(f"\nLogic Function: {name[6:].upper()}")
+     print("X0\tX1\tX2\tY")
 
-    for inputs, output in zip(dataset, data):
-        x0, x1, x2 = inputs
-        print(f"{x0}\t{x1}\t{x2}\t{int(output)}")
+     for inputs, output in zip(dataset, data):
+         x0, x1, x2 = inputs
+         print(f"{x0}\t{x1}\t{x2}\t{int(output)}")
+
 
     # Combine all computed gates
     gates = [logic_and, logic_nand]

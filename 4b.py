@@ -1,32 +1,26 @@
 """Hierarchical Clustering Algorithm on seeds_less_rows dataset for extracting cluster  labels of different varieties of seeds """
 
 
-# Step 1 & 2: Importing libraries and loading the dataset
-import pandas as pd
 
-# Load dataset
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import linkage, dendrogram
+
 seeds_df = pd.read_csv('seeds-less-rows.csv')
 
-# Remove the grain species column for clustering (save it for comparison)
 varieties = list(seeds_df.pop('grain_variety'))
 
-# Extract the numerical measurements as a NumPy array
 samples = seeds_df.values
 
-# Step 3: Run hierarchical clustering
-from scipy.cluster.hierarchy import linkage, dendrogram
-import matplotlib.pyplot as plt
-
-# Perform hierarchical clustering using the 'complete' linkage method
 mergings = linkage(samples, method='complete')
 
-# Plot dendrogram
 plt.figure(figsize=(10, 6))
 dendrogram(mergings, labels=varieties, leaf_rotation=90, leaf_font_size=6)
 plt.title("Hierarchical Clustering Dendrogram")
 plt.xlabel("Sample Index or Variety")
 plt.ylabel("Distance")
 plt.show()
+
 
 # Step 4: Import fcluster
 from scipy.cluster.hierarchy import fcluster
