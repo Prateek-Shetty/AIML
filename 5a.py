@@ -19,18 +19,15 @@ def perceptron(weight, bias, x):
 
 # Function to compute perceptron outputs for a dataset for a given logic gate
 def compute(logictype, weightdict, dataset):
-    # Extract weights for the given logic type
     weights = np.array([weightdict[logictype][w] for w in weightdict[logictype].keys()])
     
-    # Compute perceptron output for each input in the dataset
     output = np.array([perceptron(weights, weightdict['bias'][logictype], val) for val in dataset])
     
     print(f"\nComputed Logic Gate: {logictype.upper()}\n")
     return logictype, output
 
 def main():
-    # Define weights and biases for each logic gate
-    logic = {
+    logic ={
         'logic_and':  {'w0': -0.1, 'w1': 0.2, 'w2': 0.2},
         'logic_or':   {'w0': -0.1, 'w1': 0.7, 'w2': 0.7},
         'logic_not':  {'w0': 0.5,  'w1': -0.7},
@@ -60,18 +57,18 @@ def main():
     # Compute AND and NAND gate outputs
     logic_and = compute('logic_and', logic, dataset)
     logic_nand = compute('logic_nand', logic, dataset)
-    # You can uncomment others if needed
     # logic_or = compute('logic_or', logic, dataset)
     # logic_nor = compute('logic_nor', logic, dataset)
     # logic_xor = compute('logic_xor', logic, dataset)
 
     # Function to print results in a formatted truth table
-    def template(dataset, name, data):
-        print("\nLogic Function: {}".format(name[6:].upper()))
-        print("X0\tX1\tX2\tY")
-        rows = ["{1}\t{2}\t{3}\t{0}".format(output, *inputs) for inputs, output in zip(dataset, data)]
-        for r in rows:
-            print(r)
+def template(dataset, name, data):
+    print(f"\nLogic Function: {name[6:].upper()}")
+    print("X0\tX1\tX2\tY")
+
+    for inputs, output in zip(dataset, data):
+        x0, x1, x2 = inputs
+        print(f"{x0}\t{x1}\t{x2}\t{int(output)}")
 
     # Combine all computed gates
     gates = [logic_and, logic_nand]
