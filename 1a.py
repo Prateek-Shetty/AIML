@@ -76,6 +76,4 @@ r2 = 1 - (ss_res / ss_tot)
 print("\nModel Evaluation:")
 print(f"R2 Score: {r2}")
 
-print("\nLinear Regression completed successfully!")
-
 # The simple linear regression model gives average accuracy depending on the R² score value.
