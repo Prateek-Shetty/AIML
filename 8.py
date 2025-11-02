@@ -54,18 +54,12 @@ model.summary()
 # ------------------------------
 # Compile the model
 # ------------------------------
-model.compile(optimizer='rmsprop',
-              loss='binary_crossentropy',
-              metrics=['accuracy'])
+model.compile(optimizer='rmsprop',loss='binary_crossentropy',metrics=['accuracy'])
 
 # ------------------------------
 # Train the model
 # ------------------------------
-history = model.fit(input_train, y_train,
-                    epochs=10,
-                    batch_size=128,
-                    validation_split=0.2,
-                    verbose=1)
+history = model.fit(input_train, y_train, epochs=10, batch_size=128, validation_split=0.2,verbose=1)
 
 # ------------------------------
 # Evaluate the model

@@ -1,7 +1,6 @@
 """Hierarchical Clustering Algorithm on seeds_less_rows dataset for extracting cluster  labels of different varieties of seeds """
 
 
-
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram

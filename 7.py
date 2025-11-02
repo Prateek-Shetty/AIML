@@ -34,6 +34,7 @@ print('Output classes : ', classes)
 
 # Display sample training and test images
 plt.figure(figsize=[5,5])
+
 plt.subplot(121)
 plt.imshow(train_X[0,:,:], cmap='gray')
 plt.title("Ground Truth : {}".format(train_Y[0]))
@@ -58,9 +59,7 @@ print('Original label:', train_Y[0])
 print('After conversion to one-hot:', train_Y_one_hot[0])
 
 # Split training data into train and validation
-train_X, valid_X, train_label, valid_label = train_test_split(
-    train_X, train_Y_one_hot, test_size=0.2, random_state=13
-)
+train_X, valid_X, train_label, valid_label = train_test_split(train_X, train_Y_one_hot, test_size=0.2, random_state=13)
 
 batch_size = 64
 epochs = 3

@@ -39,9 +39,7 @@ y = dataframe.iloc[:, 8]    # Last column as target
 dataframe.shape
 
 # Split data into training and test sets (67% train, 33% test)
-features_train, features_test, target_train, target_test = train_test_split(
-    X, y, test_size=0.33, random_state=0
-)
+features_train, features_test, target_train, target_test = train_test_split(X, y, test_size=0.33, random_state=0)
 
 # ==========================
 # Step 3: Define the Keras model
@@ -65,13 +63,7 @@ network.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy
 # ==========================
 # Step 5: Train the model
 # ==========================
-history = network.fit(
-    features_train, target_train,
-    epochs=20,
-    verbose=1,
-    batch_size=100,
-    validation_data=(features_test, target_test)
-)
+history = network.fit(  features_train, target_train,epochs=20, verbose=1, batch_size=100, validation_data=(features_test, target_test))
 
 # ==========================
 # Step 6: Visualize Training and Test Loss
