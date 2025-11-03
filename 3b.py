@@ -74,3 +74,40 @@ print(confusion_matrix(y_test == 'M', test_pred_threshold))
 
 
 """Conclusion: The naïve bayes model is good with respect to breast cancer dataset by  comparing the precision recall and F1 score values of training and testing dataset  (classification report)"""
+
+
+
+
+# Step 1: Import Libraries
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# Step 2: Create or Load Dataset
+# Example dataset (you can replace it with your CSV file)
+data = {
+    'Age': [25, 30, 35, 40, 20, 27, 32, 38],
+    'Salary': [50000, 60000, 80000, 90000, 40000, 48000, 75000, 85000],
+    'Buy': ['No', 'No', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes']
+}
+df = pd.DataFrame(data)
+
+# Step 3: Split features (X) and target (y)
+X = df[['Age', 'Salary']]
+y = df['Buy']
+
+# Step 4: Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
+
+# Step 5: Create and Train Naive Bayes model
+model = GaussianNB()
+model.fit(X_train, y_train)
+
+# Step 6: Make Predictions
+y_pred = model.predict(X_test)
+
+# Step 7: Evaluate Model
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))
+print("\nAccuracy:", accuracy_score(y_test, y_pred))
