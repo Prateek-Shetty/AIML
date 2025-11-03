@@ -200,3 +200,41 @@ print(classification_report(test_Y, predicted_classes, target_names=target_names
 
 
 """Conclusion: Using Keras and tensor flow network loaded the mnist image dataset and designed a two-layer neural network with one hidden layer and one output layer using  CNN with Leaky Relu activation function for the hidden layer."""
+
+
+
+
+
+# Step 1: Import Libraries
+import tensorflow as tf
+from tensorflow.keras import datasets, layers, models
+
+# Step 2: Load and Prepare Data
+(X_train, y_train), (X_test, y_test) = datasets.mnist.load_data()
+
+# CNNs expect 3D input: (height, width, channels)
+X_train = X_train.reshape((X_train.shape[0], 28, 28, 1)).astype('float32') / 255
+X_test = X_test.reshape((X_test.shape[0], 28, 28, 1)).astype('float32') / 255
+
+# Step 3: Build the CNN Model
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),  # Convolution layer
+    layers.MaxPooling2D((2, 2)),                                           # Pooling layer
+    layers.Conv2D(64, (3, 3), activation='relu'),                          # Another conv layer
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),                                                      # Flatten to 1D
+    layers.Dense(64, activation='relu'),                                   # Hidden layer
+    layers.Dense(10, activation='softmax')                                 # Output (10 classes)
+])
+
+# Step 4: Compile the Model
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Step 5: Train the Model
+model.fit(X_train, y_train, epochs=5, batch_size=64, validation_data=(X_test, y_test))
+
+# Step 6: Evaluate Performance
+test_loss, test_acc = model.evaluate(X_test, y_test)
+print(f"\nTest accuracy: {test_acc:.4f}")
