@@ -43,18 +43,19 @@ dt_classifier = DecisionTreeClassifier(random_state=42)
 dt_classifier.fit(X_train, y_train)
 
 # Step 6: Make Predictions
-y_pred = dt_classifier.predict(X_test)
+y_trainpred = dt_classifier.predict(X_test)
+y_testpred = dt_classifier.predict(X_test)
 prob_predictions = dt_classifier.predict_proba(X_test)
 
 # Step 7: Evaluate the Model
 print("\nModel Evaluation Results:")
-print("Training Accuracy:", accuracy_score(y_train, dt_classifier.predict(X_train)))
-print("Testing Accuracy:", accuracy_score(y_test, y_pred))
+print("Training Accuracy:", accuracy_score(y_train, y_trainpred))
+print("Testing Accuracy:", accuracy_score(y_test, y_testpred))
 
-print("\nTraining Confusion Matrix:\n", confusion_matrix(y_train, dt_classifier.predict(X_train)))
-print("\nTesting Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("\nTraining Confusion Matrix:\n", confusion_matrix(y_train, y_trainpred))
+print("\nTesting Confusion Matrix:\n", confusion_matrix(y_test, y_testpred))
 
-print("\nClassification Report:\n", classification_report(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_testpred))
 
 
 """Comparing Training and testing accuracy scores the accuracy of Decision Tree model is  good. The Correctly classified tuples for training set is (286+169) and the misclassified  tuples are zero.The correctly classified for training set is (71+36)and misclassified tuples  are(7+0)."""
