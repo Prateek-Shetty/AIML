@@ -43,7 +43,7 @@ dt_classifier = DecisionTreeClassifier(random_state=42)
 dt_classifier.fit(X_train, y_train)
 
 # Step 6: Make Predictions
-y_trainpred = dt_classifier.predict(X_test)
+y_trainpred = dt_classifier.predict(X_train)
 y_testpred = dt_classifier.predict(X_test)
 prob_predictions = dt_classifier.predict_proba(X_test)
 
