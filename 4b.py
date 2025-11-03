@@ -4,6 +4,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
+from scipy.cluster.hierarchy import fcluster
 
 seeds_df = pd.read_csv('seeds-less-rows.csv')
 
@@ -22,7 +23,7 @@ plt.show()
 
 
 # Step 4: Import fcluster
-from scipy.cluster.hierarchy import fcluster
+
 
 # Step 5: Extract flat clusters with a maximum height of 6
 labels = fcluster(mergings, 6, criterion='distance')
