@@ -7,7 +7,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # %matplotlib inline
-
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 # Step 2: Load Dataset
 df = pd.read_csv("housing_prices.csv")
 df = df.iloc[:, [0, 1, 2, 4]]  # Selecting required columns
@@ -23,13 +24,13 @@ print("\nSample target values (y):")
 print(y[:5])
 
 # Step 4: Split Data (80% Train, 20% Test)
-from sklearn.model_selection import train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=100)
 print("\nTraining set shape:", X_train.shape)
 print("Testing set shape:", X_test.shape)
 
 # Step 5: Train the Multiple Linear Regression Model
-from sklearn.linear_model import LinearRegression
+
 mlr_model = LinearRegression(fit_intercept=True)
 mlr_model.fit(X_train, y_train)
 
