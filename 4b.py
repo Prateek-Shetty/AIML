@@ -22,8 +22,6 @@ plt.ylabel("Distance")
 plt.show()
 
 
-# Step 4: Import fcluster
-
 
 # Step 5: Extract flat clusters with a maximum height of 6
 labels = fcluster(mergings, 6, criterion='distance')
