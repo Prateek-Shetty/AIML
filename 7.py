@@ -206,8 +206,8 @@ print(classification_report(test_Y, predicted_classes, target_names=target_names
 
 
 # Step 1: Import Libraries
-import tensorflow as tf
-from tensorflow.keras import datasets, layers, models
+
+from keras import datasets, layers, models
 
 # Step 2: Load and Prepare Data
 (X_train, y_train), (X_test, y_test) = datasets.mnist.load_data()
@@ -238,3 +238,4 @@ model.fit(X_train, y_train, epochs=5, batch_size=64, validation_data=(X_test, y_
 # Step 6: Evaluate Performance
 test_loss, test_acc = model.evaluate(X_test, y_test)
 print(f"\nTest accuracy: {test_acc:.4f}")
+w
